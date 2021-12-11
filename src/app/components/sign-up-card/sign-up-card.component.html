@@ -1,0 +1,48 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Sign Up</mat-card-title>
+  </mat-card-header>
+
+  <form class="signup-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Ex. sam" [formControl]="nameSignUpFormControl">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailSignUpFormControl" [errorStateMatcher]="matcher"
+             placeholder="Ex. pat@example.com">
+      <mat-hint></mat-hint>
+      <mat-error *ngIf="emailSignUpFormControl.hasError('email') && !emailSignUpFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailSignUpFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" [formControl]="passwordSignUpFormControl" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput placeholder="Confirm Password" [formControl]="confirmPasswordSignUpFormControl" >
+    </mat-form-field>
+
+    <section class="example-section">
+      <label class="example-margin">User Type:</label>
+<!--      <mat-radio-group [(ngModel)]="labelPosition">-->
+      <mat-radio-group>
+        <mat-radio-button class="example-margin" value="after">Admin</mat-radio-button>
+        <mat-radio-button class="example-margin" value="before">Customer</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <button mat-raised-button color="accent">Sign Up</button>
+  </form>
+
+
+</mat-card>

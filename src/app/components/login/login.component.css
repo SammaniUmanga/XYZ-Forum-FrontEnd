@@ -1,0 +1,6 @@
+.center {
+  display: flex;
+  height: 500px;
+  background-color: #c1dbe0;
+  justify-content: center;
+}

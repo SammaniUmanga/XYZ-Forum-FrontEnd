@@ -1,0 +1,33 @@
+<p>
+  <mat-toolbar>
+    <button mat-icon-button style="color: aqua" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>XYZ Product Forum</span>
+    <span class="example-spacer"></span>
+
+    <button mat-button>Add Post</button>
+    <button mat-button>My Post</button>
+    <button mat-button [matMenuTriggerFor]="approveMenu">Approve Posts</button>
+    <mat-menu #approveMenu="matMenu" yPosition="above">
+      <button mat-menu-item>Approve</button>
+      <button mat-menu-item>Reject</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="profileMenu">My Profile</button>
+    <mat-menu #profileMenu="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="/">Sign Out</button>
+    </mat-menu>
+
+    <button mat-icon-button class="example-icon favorite-icon"  style="color: aqua" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+
+
+
