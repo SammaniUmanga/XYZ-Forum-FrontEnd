@@ -43,7 +43,8 @@ export class LoginCardComponent implements OnInit {
     console.log(this.emailFormControl.value);
     this.loginService.loginUser(this.emailFormControl.value, this.passwordFormControl.value).subscribe(Response => {
       // console.log(Response.success);
-      if (Response) {
+      // @ts-ignore
+      if (Response['success'] == true) {
         console.log(Response);
         this.router.navigate(['/dashboard']);
         // this.notifier.notify('success', Response.message);

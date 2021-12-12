@@ -24,6 +24,7 @@ import { SignUpCardComponent } from './components/sign-up-card/sign-up-card.comp
 import { StatNavSignupComponent } from './components/stat-nav-signup/stat-nav-signup.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HttpClientModule,
     MatDividerModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

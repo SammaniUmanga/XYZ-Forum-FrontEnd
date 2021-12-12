@@ -6,3 +6,7 @@
   background-color: yellow;
   background-size: cover;
 }
+
+mat-grid-tile {
+  background: lightblue;
+}

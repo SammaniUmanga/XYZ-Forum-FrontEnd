@@ -5,10 +5,11 @@ import {catchError, tap} from "rxjs/operators";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginServiceService {
+export class DashboardServiceService {
+
 
   httpOptions: any;
-  private loginUrl = 'http://xyz-product-forum.test/api/users/sign-in';
+  private getAllPostsUrl = 'http://xyz-product-forum.test/api/posts/get-all-posts';
 
   constructor(private http: HttpClient) {
     this.httpOptions = {
@@ -16,11 +17,12 @@ export class LoginServiceService {
     };
   }
 
-  //User login
-  loginUser(userEmail: any, userPassword: any) {
-    return this.http.post<Response>(this.loginUrl, {
-      password: userPassword,
-      email: userEmail,
+
+
+  //Get all posts
+  getAllPostds() {
+    return this.http.get<Response>(this.getAllPostsUrl, {
+
     }, )
       .pipe(tap(resp => {
         return resp;
@@ -29,6 +31,5 @@ export class LoginServiceService {
         throw err;
       }));
   }
-
 
 }
