@@ -1,3 +1,24 @@
+##################Front End Guid lines##################
+
+Framework: 
+Angular
+
+pre-requisite: node.js,  npm, angular CLI
+
+My versions:
+
+Angular CLI: 12.2.14,  Node: 16.11.0 , npm: 8.0.0
+
+How to run project:
+
+1)git clone and checkout to master branch
+
+2)Install packages :   npm install
+
+3)Add your backend virtual host baseUrl to environment file
+
+4)Run project     :    ng serve --o
+
 # XyzProductForumFrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
