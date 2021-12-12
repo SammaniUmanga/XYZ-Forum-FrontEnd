@@ -25,6 +25,8 @@ import { StatNavSignupComponent } from './components/stat-nav-signup/stat-nav-si
 import {MatRadioModule} from "@angular/material/radio";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import { AddPostModalComponent } from './components/add-post-modal/add-post-modal.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     RegisterComponent,
     SignUpCardComponent,
     StatNavSignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddPostModalComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatDividerModule,
     MatRadioModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

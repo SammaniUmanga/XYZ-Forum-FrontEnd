@@ -34,7 +34,6 @@
 
     <section class="example-section">
       <label class="example-margin">User Type:</label>
-<!--      <mat-radio-group [(ngModel)]="labelPosition">-->
       <mat-radio-group  [formControl]="userTypeSignUpFormControl">
         <mat-radio-button class="example-margin" value="1">Admin</mat-radio-button>
         <mat-radio-button class="example-margin" value="2">Customer</mat-radio-button>
@@ -43,6 +42,4 @@
 
     <button mat-raised-button color="accent" (click)="signUp()">Sign Up</button>
   </form>
-
-
 </mat-card>

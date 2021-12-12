@@ -6,7 +6,7 @@
     <span>XYZ Product Forum</span>
     <span class="example-spacer"></span>
 
-    <button mat-button>Add Post</button>
+    <button mat-button style="color: aqua" (click)="addPostModal()">Add Post</button>
     <button mat-button>My Post</button>
     <button mat-button [matMenuTriggerFor]="approveMenu">Approve Post</button>
     <mat-menu #approveMenu="matMenu" yPosition="above">
@@ -14,7 +14,7 @@
       <button mat-menu-item>Reject</button>
     </mat-menu>
 
-    <button mat-button [matMenuTriggerFor]="profileMenu">My Profile</button>
+    <button mat-button [matMenuTriggerFor]="profileMenu">{{loggedUser}}</button>
     <mat-menu #profileMenu="matMenu" yPosition="below">
       <button mat-menu-item routerLink="/">Sign Out</button>
     </mat-menu>

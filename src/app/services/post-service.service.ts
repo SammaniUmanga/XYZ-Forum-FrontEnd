@@ -10,6 +10,7 @@ export class PostServiceService {
 
   httpOptions: any;
   private deletePostUrl = environment.baseUrl+'/api/posts/delete-posts';
+  private addPostUrl = environment.baseUrl+'/api/posts/add-posts';
 
   constructor(private http: HttpClient) {
     this.httpOptions = {
@@ -31,4 +32,17 @@ export class PostServiceService {
       }));
   }
 
+  //add Post
+  addOnePost(postedBy: any, postDesc: any) {
+    return this.http.post<Response>(this.addPostUrl, {
+      posted_by: postedBy,
+      post_description: postDesc
+    }, )
+      .pipe(tap(resp => {
+        return resp;
+      }), catchError((err) => {
+        console.error(err);
+        throw err;
+      }));
+  }
 }
