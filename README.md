@@ -1,15 +1,15 @@
-##################Front End Guid lines##################
+## Front End Guid lines
 
-Framework: 
+## Framework: 
 Angular
 
-pre-requisite: node.js,  npm, angular CLI
+## pre-requisite: node.js,  npm, angular CLI
 
-My versions:
+## My versions:
 
 Angular CLI: 12.2.14,  Node: 16.11.0 , npm: 8.0.0
 
-How to run project:
+## How to run project:
 
 1)git clone and checkout to master branch
 
