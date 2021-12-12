@@ -22,6 +22,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginCardComponent implements OnInit {
 
+  userId: any;
+  userEmail: any;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required]);
 
@@ -40,12 +42,16 @@ export class LoginCardComponent implements OnInit {
   }
 
   login() {
-    console.log(this.emailFormControl.value);
     this.loginService.loginUser(this.emailFormControl.value, this.passwordFormControl.value).subscribe(Response => {
-      // console.log(Response.success);
       // @ts-ignore
       if (Response['success'] == true) {
-        console.log(Response);
+        // @ts-ignore
+        this.userId = Response['result']['data']['user_id'];
+        // @ts-ignore
+        this.userEmail = Response['result']['data']['email'];
+        localStorage.setItem('logged_user_id', this.userId);
+        localStorage.setItem('logged_user_email', this.userEmail);
+
         this.router.navigate(['/dashboard']);
         // this.notifier.notify('success', Response.message);
       } else {

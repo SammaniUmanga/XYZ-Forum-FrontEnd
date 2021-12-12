@@ -6,10 +6,10 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginServiceService {
+export class RegisterServiceService {
 
   httpOptions: any;
-  private loginUrl = environment.baseUrl+'/api/users/sign-in';
+  private signUpUrl = environment.baseUrl+'/api/users/sign-up';
 
   constructor(private http: HttpClient) {
     this.httpOptions = {
@@ -17,11 +17,14 @@ export class LoginServiceService {
     };
   }
 
-  //User login
-  loginUser(userEmail: any, userPassword: any) {
-    return this.http.post<Response>(this.loginUrl, {
-      password: userPassword,
+  //User Sign up
+  signUpUser(userName: any, userEmail: any, userPassword: any, passwordConfirmation: any, usertype: any) {
+    return this.http.post<Response>(this.signUpUrl, {
+      name: userPassword,
       email: userEmail,
+      password: userPassword,
+      password_confirmation: passwordConfirmation,
+      user_type: usertype,
     }, )
       .pipe(tap(resp => {
         return resp;
@@ -30,6 +33,5 @@ export class LoginServiceService {
         throw err;
       }));
   }
-
 
 }

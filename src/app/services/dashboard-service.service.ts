@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class DashboardServiceService {
 
 
   httpOptions: any;
-  private getAllPostsUrl = 'http://xyz-product-forum.test/api/posts/get-all-posts';
+  private getAllPostsUrl = environment.baseUrl+'/api/posts/get-all-posts';
 
   constructor(private http: HttpClient) {
     this.httpOptions = {

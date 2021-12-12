@@ -35,13 +35,13 @@
     <section class="example-section">
       <label class="example-margin">User Type:</label>
 <!--      <mat-radio-group [(ngModel)]="labelPosition">-->
-      <mat-radio-group>
-        <mat-radio-button class="example-margin" value="after">Admin</mat-radio-button>
-        <mat-radio-button class="example-margin" value="before">Customer</mat-radio-button>
+      <mat-radio-group  [formControl]="userTypeSignUpFormControl">
+        <mat-radio-button class="example-margin" value="1">Admin</mat-radio-button>
+        <mat-radio-button class="example-margin" value="2">Customer</mat-radio-button>
       </mat-radio-group>
     </section>
 
-    <button mat-raised-button color="accent">Sign Up</button>
+    <button mat-raised-button color="accent" (click)="signUp()">Sign Up</button>
   </form>
 
 
